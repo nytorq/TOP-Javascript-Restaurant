@@ -3,9 +3,12 @@ import { homeContent } from "./home.js";
 import { aboutContent } from "./about.js";
 import { contactContent } from "./contact.js";
 
+if (process.env.NODE_ENV !== 'production') {
+    console.log('Looks like we are in development mode!');
+  }
+
 const mainContentArea = document.getElementById('main');
 const navButtons = document.querySelectorAll('button');
-console.log(navButtons)
 const pageContentFunctions = {
     home: homeContent,
     about: aboutContent,
