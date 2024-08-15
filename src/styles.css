@@ -55,3 +55,7 @@ img {
     display: block;
     border-radius: 8px;
 }
+
+button.active {
+    color: rgb(84, 71, 255);
+}

@@ -1,17 +1,18 @@
-console.log('contact.js has been loaded.')
 import gastronomiaExterior from "./images/gastronomia-exterior.png";
+import {textCreator, imageCreator} from "./tools.js";
 
 function contactContent() {
-    // const gastroIntroString = "At GastronoMía, we believe that food is more than just sustenance; it's an experience. Our chefs craft each dish with passion and precision, using the freshest ingredients to create flavors that linger long after your meal.";
-    // const gastronomiaPlateAltText = "An elegantly plated gourmet meal featuring a perfectly seared steak accompanied by vibrant green asparagus, cherry tomatoes, and roasted baby carrots. The dish is artistically arranged on a rustic wooden table, enhanced with a delicate sauce drizzle. The cozy restaurant ambiance in the background is characterized by warm, soft lighting and subtle wooden textures, creating a welcoming dining atmosphere."
-    // const gastroIntro = document.createElement('p');
-    // gastroIntro.innerText = gastroIntroString;
-    const heroImage = document.createElement('img');
-    heroImage.src = gastronomiaExterior;
-    // heroImage.alt = gastronomiaPlateAltText;
     const content = document.createElement('div');
-    // content.appendChild(gastroIntro);
-    content.appendChild(heroImage);
+    let contentFragment = imageCreator(gastronomiaExterior, "A sleek, minimalist image of the restaurant's exterior with a well-designed entrance, showing the restaurant's name and logo prominently");
+    content.appendChild(contentFragment);
+    contentFragment = textCreator("h2", "Contact us");
+    content.appendChild(contentFragment);
+    contentFragment = textCreator("p", "123 Flavor Street, Foodie City, FC 45678");
+    content.appendChild(contentFragment);
+    contentFragment = textCreator("p", "(123) 456-7890");
+    content.appendChild(contentFragment);
+    contentFragment = textCreator("p", "We recommend making a reservation to ensure a table at your preferred time. Call us or use our online reservation system.");
+    content.appendChild(contentFragment);
     return content;
 }
 
